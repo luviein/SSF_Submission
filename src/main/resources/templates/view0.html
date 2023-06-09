@@ -35,8 +35,22 @@
 						</div>
 					</td>
 				</tr>
+				<tr th:if="*{wrongCount} &gt; 1">
+					<td>
+						<label for="captcha">Answer:</label>
+					</td>
+					<div class="captcha">
+						<td>
+							<span data-th-text="*{generateCaptcha()}"></span>: 
+							<input type="text" name="captcha" id="captcha" size="30" placeholder="Answer" data-th-object="${captcha}" >
+							
+							
+						</td>
+					</div>
+					
+					
+				</tr>
 				<tr>
-					<td></td>
 					<td>
 						<button type="submit">Login</button>
 					</td>

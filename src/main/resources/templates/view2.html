@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Deactivated</title>
 </head>
-<body>
-    <form action="/api/authenticate" method="post">
-        <button type="submit">Authenticate</button>
-    </form>
+<body data-th-object="${user}">
+    <table>
+        <tr>
+            <td>Your login <span data-th-text="*{username}"></span> has been deactivated for 30 mins.</td>
+        </tr>
+    </table>
 </body>
 </html>

@@ -41,14 +41,20 @@ public class FrontController {
 			return "view0";
 		}
 
+		session.setAttribute("newUser", user);
 		if (authSvc.authenticate(username, password)) {
-			
+
 			return "view1";
 		}
 
+		if (user.getWrongCount() >= 1) {
+			String userCaptcha = user.generateCaptcha();
+			m.addAttribute("captcha", userCaptcha);
+			if (user.getWrongCount() > 3) {
+				authSvc.disableUser(username);
+			}
+		}
 		return "view0";
 	}
 
 }
-
-
