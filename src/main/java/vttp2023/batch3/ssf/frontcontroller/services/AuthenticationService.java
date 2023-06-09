@@ -43,7 +43,7 @@ public class AuthenticationService {
 		RestTemplate template = new RestTemplate();
 		ResponseEntity<String> res = template.exchange(req, String.class);
 
-		System.out.println(res.getStatusCode().toString());
+		System.out.println(res.getStatusCode());
 
 		if((res.getStatusCode().equals(HttpStatus.BAD_REQUEST)) || (res.getStatusCode().equals(HttpStatus.UNAUTHORIZED))){
 			user.setWrongCount(user.getWrongCount()+1);

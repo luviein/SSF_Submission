@@ -33,6 +33,9 @@ public class FrontController {
 	@Autowired
 	private AuthenticationService authSvc;
 
+
+	
+	
 	// TODO: Task 2, Task 3, Task 4, Task 6
 	@PostMapping(path = "/login", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public String login(Model m, HttpSession session, @Valid User user, BindingResult result,
