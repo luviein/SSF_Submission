@@ -16,8 +16,8 @@ public class AuthenticationRepository {
 	private ValueOperations valueOperations;
 	// TODO Task 5
 	// Use this class to implement CRUD operations on Redis
-	public void save(User user){
-		template.opsForValue().set(user.getUsername(), user.toJSON().toString());
+	public void save(String username){
+		template.opsForValue().set(username, "disabled");
 
 	}
 	public void disable(String username){
